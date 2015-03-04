@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 #A small metronome written for the command line
 
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
 function Play {
 	# main function
 	tempo=$(bc -l <<< 60/"$1")
@@ -12,11 +14,11 @@ function Play {
 }
 
 function FirstSound {
-	aplay -q ./src/first.wav & echo -ne ' + ' & sleep "$tempo"
+	aplay -q "$DIR"/src/first.wav & echo -ne ' + ' & sleep "$tempo"
 }
 
 function SecondSound {
-	aplay -q ./src/second.wav & echo -ne ' - ' &sleep "$tempo"
+	aplay -q "$DIR"/src/second.wav & echo -ne ' - ' &sleep "$tempo"
 }
 
 Play $1
