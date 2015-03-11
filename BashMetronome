@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 #A small metronome written for the command line
 
-DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-
 function Play {
-	# main function
 	tempo=$(bc -l <<< 60/"$1")
-	echo "Your metonomer is set and ready at "$1" BPM. Press Ctrl+C to quit"
+	echo "Your metronomer is set and ready at "$1" BPM. Press Ctrl+C to quit"
 	while [[ : ]]; do
 		FirstSound 
 		SecondSound
@@ -16,11 +13,11 @@ function Play {
 }
 
 function FirstSound {
-	aplay -q "$DIR"/src/first.wav & echo -ne ' + ' & sleep "$tempo"
+	aplay -q "${BASH_SOURCE%/*}"/src/first.wav & echo -ne ' + ' & sleep "$tempo"
 }
 
 function SecondSound {
-	aplay -q "$DIR"/src/second.wav & echo -ne ' - ' &sleep "$tempo"
+	aplay -q "${BASH_SOURCE%/*}"/src/second.wav & echo -ne ' - ' &sleep "$tempo"
 }
 
 Play $1
