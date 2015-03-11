@@ -10,6 +10,8 @@ function Play {
 	while [[ : ]]; do
 		FirstSound 
 		SecondSound
+		SecondSound
+		SecondSound
 	done
 }
 

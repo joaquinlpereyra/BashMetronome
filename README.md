@@ -1,8 +1,8 @@
 # BashMetronome
 
-Could be even smaller but functions are your friends and it is nicer to read. Depends on aplay and alsa. You probably hav them.
+Could be even smaller but functions are your friends and it is nicer to read with them. Depends on aplay and alsa. You probably have them.
 
 # Usage
 
-$ bash bashmetronome (BPM)
+$ bash BashMetronome (BPM)
 
